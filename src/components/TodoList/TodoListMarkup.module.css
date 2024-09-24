@@ -1,0 +1,115 @@
+.taskText{
+	font-family: 'Roboto', cursive;
+	font-size: 25px;
+	text-align: center;
+	line-height: 1;
+	white-space: pre-wrap;
+	height: auto;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+	color: #000;
+}
+
+.taskTextCompleted{
+	font-family: 'Roboto', cursive;
+	text-decoration: line-through;
+	font-size: 25px;
+	text-align: center;
+	line-height: 1;
+	white-space: pre-wrap;
+	height: auto;
+	color: #838383;
+}
+
+
+.listItem{
+	height: auto;
+	min-height: 50px;
+	min-width: 150px;
+	max-width: 600px;
+	max-height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	background-color: aliceblue;
+	padding: 10px 20px;
+	border-radius: 10px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	background: -webkit-linear-gradient(90deg,#ffffff,#00d0ff); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(90deg,#ffffff,#00d0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btnItem {
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: -webkit-linear-gradient(90deg,#3d4052,#09090c);
+	background: linear-gradient(90deg,#3d4052,#09090c);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+	font-size: 20px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.btnItem:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btnItem:active {
+    color: #000
+}
+
+.btnItem:active:after {
+    background: transparent;
+}
+
+.btnItem:hover:before {
+    opacity: 1;
+}
+
+.btnItem:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.taskCheckbox{
+	width: 20px;
+	height: 20px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.numItem{
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+	color: #000;
+	font-family: 'Roboto', cursive;
+	font-size: 25px;
+}
