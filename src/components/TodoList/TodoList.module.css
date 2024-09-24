@@ -12,17 +12,17 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
-  color: rgb(255, 255, 255);
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.871);
-  font-size: 36px;
+  gap: 23px;
+  color: rgb(20, 20, 20);
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.871);
+  font-size: 37px;
   font-weight: 800;
   white-space: nowrap;
 }
 
 .yourTask {
   max-width: 300px;
-  min-height: 40px;
+  max-height: 43px;
   background: -webkit-linear-gradient(90deg, #09090c, #1a1b23);
   background: linear-gradient(90deg, #09090c, #1a1b23);
   color: aliceblue;
@@ -36,7 +36,7 @@
 }
 
 .formBtn {
-  width: 220px;
+  width: 130px;
   height: 50px;
   border: none;
   outline: none;
@@ -138,5 +138,5 @@
   gap: 20px;
   list-style: none;
   margin-top: 30px;
-  padding: 0, 10px;
+  padding: 15px 15px;
 }

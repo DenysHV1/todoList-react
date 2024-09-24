@@ -8,11 +8,16 @@ body {
   font-family: 'Playwrite DE Grund', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: -webkit-linear-gradient(90deg, #1f2574, #2c62ae);
-  background: linear-gradient(90deg, #1f2574, #2c62ae);
+  background: -webkit-linear-gradient(90deg,#030303,#713d9e); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(90deg,#030303,#713d9e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+p {
+	margin: 0;
+}
+
+

@@ -10,44 +10,45 @@ export class TodoList extends Component {
   };
 
   handlerInputValue = e => {
-    console.log(e.currentTarget.value);
     this.setState({ inputValue: e.currentTarget.value });
   };
 
   setID = () => {
-    this.setState(prevState => {
-      return { lastID: (prevState.lastID += 1) };
+    this.setState(({ lastID }) => {
+      return { lastID: (lastID += 1) };
     });
   };
 
   handlerSubmit = e => {
+    const { inputValue } = this.state;
     e.preventDefault();
-    this.setID();
-
-    this.setState(prevState => ({
-      tasks: [
-        ...prevState.tasks,
-        {
-          task: this.state.inputValue,
-          id: this.state.lastID,
-          completed: false,
-        },
-      ],
-      inputValue: '',
-    }));
-    e.currentTarget.reset();
+    if (inputValue.length > 1) {
+      this.setID();
+      this.setState(({ tasks }) => ({
+        tasks: [
+          ...tasks,
+          {
+            task: inputValue,
+            id: this.state.lastID,
+            completed: false,
+          },
+        ],
+        inputValue: '',
+      }));
+      e.currentTarget.reset();
+    }
   };
 
   deleteItemFromList = listId => {
-    this.setState(prevState => {
-      return { tasks: prevState.tasks.filter(({ id }) => id !== listId) };
+    this.setState(({ tasks }) => {
+      return { tasks: tasks.filter(({ id }) => id !== listId) };
     });
   };
 
   handlerChangeCheckboxes = listId => {
-    this.setState(prevState => {
+    this.setState(({ tasks }) => {
       return {
-        tasks: prevState.tasks.map(item =>
+        tasks: tasks.map(item =>
           listId === item.id ? { ...item, completed: !item.completed } : item
         ),
       };
@@ -55,6 +56,7 @@ export class TodoList extends Component {
   };
 
   render() {
+    const { inputValue, tasks } = this.state;
     return (
       <>
         <form type="submit" className={css.form} onSubmit={this.handlerSubmit}>
@@ -64,20 +66,16 @@ export class TodoList extends Component {
               type="text"
               className={css.yourTask}
               name="yourTask"
-              value={this.state.inputValue}
+              value={inputValue}
               onChange={this.handlerInputValue}
             />
           </label>
           <button className={css.formBtn}>Send</button>
         </form>
-        <ul
-          className={
-            this.state.tasks.length > 0 ? css.listTodo : css.listTodoOff
-          }
-        >
+        <ul className={css.listTodo}>
           <TodoListMarkup
             deleteItem={this.deleteItemFromList}
-            listItems={this.state.tasks}
+            listItems={tasks}
             checkBoxFn={this.handlerChangeCheckboxes}
           ></TodoListMarkup>
         </ul>
