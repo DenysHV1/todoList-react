@@ -6,7 +6,7 @@ export const TodoListMarkup = ({ listItems, deleteItem, checkBoxFn }) => {
     return listItems.map(({ task, id, completed }) => {
       return (
         <li key={id} className={css.listItem}>
-          <p className={css.numItem}>{id - 1}.</p>
+          <p className={css.numItem}>{id}.</p>
           <input
             onChange={() => checkBoxFn(id)}
             type="checkbox"
