@@ -17,7 +17,7 @@ export const TodoListMarkup = ({ listItems, deleteItem, checkBoxFn }) => {
             {task}
           </p>
           <button className={css.btnItem} onClick={() => deleteItem(id)}>
-            Delete
+            ✖️
           </button>
         </li>
       );
