@@ -1,7 +1,6 @@
 import css from './TodoListMarkup.module.css';
 
 export const TodoListMarkup = ({ listItems, deleteItem, checkBoxFn }) => {
-  console.log(listItems);
   if (listItems.length > 0) {
     return listItems.map(({ task, id, completed }, idx) => {
       return (

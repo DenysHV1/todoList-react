@@ -55,6 +55,28 @@ export class TodoList extends Component {
     });
   };
 
+  componentDidMount() {
+    const listFromStorage = localStorage.getItem('listStory');
+    const lastId = localStorage.getItem('lastId');
+    if (listFromStorage) {
+      try {
+        const parsedTasks = JSON.parse(listFromStorage);
+        const parsedLastId = Number(JSON.parse(lastId));
+
+        this.setState({ tasks: parsedTasks, lastID: parsedLastId });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (this.state.tasks !== prevState.tasks) {
+      localStorage.setItem('listStory', JSON.stringify(this.state.tasks));
+      localStorage.setItem('lastId', JSON.stringify(this.state.lastID));
+    }
+  }
+
   render() {
     const { inputValue, tasks } = this.state;
     return (
