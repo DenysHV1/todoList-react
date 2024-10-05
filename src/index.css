@@ -20,3 +20,10 @@ code {
 p {
   margin: 0;
 }
+
+.container {
+	max-width: 1260px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin: 0 auto;
+}
