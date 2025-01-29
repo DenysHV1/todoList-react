@@ -1,6 +1,18 @@
+import React, { FC } from 'react';
 import css from './TodoListMarkup.module.css';
+import { ITask } from './TodoList';
 
-export const TodoListMarkup = ({ listItems, deleteItem, checkBoxFn }) => {
+interface ITodoListMarkupProps {
+  listItems: ITask[];
+  deleteItem: (id: number) => void;
+  checkBoxFn: (id: number) => void;
+}
+
+export const TodoListMarkup: FC<ITodoListMarkupProps> = ({
+  listItems,
+  deleteItem,
+  checkBoxFn,
+}) => {
   if (listItems.length > 0) {
     return listItems.map(({ task, id, completed }, idx) => {
       return (
